@@ -11,10 +11,28 @@ class Stack():
         del self.stack_list[-1]
         return val
 
-pila = Stack()
+class AddingStack(Stack):
+    def __init__(self):
+        Stack.__init__(self)
+        self.__sum = 0
+
+    def get_sum(self):
+        return self.__sum
+
+    def push(self, val):
+        self.__sum += val
+        Stack.push(self, val)
+
+    def pop(self):
+        val = Stack.pop(self)
+        self.__sum -= val
+        return val
+
+
+stack_object = AddingStack()
 
 #for i in range(5):
-#    print(i)
-#    pila.push(i)
-#for i in range (5):
-#    print(pila.pop())
+#    stack_object.push(i)
+#print(stack_object.get_sum())
+#for i in range(5):
+#    print(stack_object.pop())    
