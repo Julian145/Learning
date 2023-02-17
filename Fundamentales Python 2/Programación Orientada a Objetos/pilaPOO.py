@@ -31,6 +31,8 @@ class AddingStack(Stack):
 
 stack_object = AddingStack()
 
+#print(stack_object.__dict__)
+
 #for i in range(5):
 #    stack_object.push(i)
 #print(stack_object.get_sum())
